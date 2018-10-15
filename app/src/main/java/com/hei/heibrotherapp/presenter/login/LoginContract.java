@@ -1,4 +1,4 @@
-package com.hei.heibrotherapp.ui.login;
+package com.hei.heibrotherapp.presenter.login;
 
 import com.hei.heibrotherapp.base.mvp.BasePresenter;
 import com.hei.heibrotherapp.base.mvp.IBaseView;
@@ -13,7 +13,7 @@ import com.hei.heibrotherapp.base.mvp.IBaseView;
 public interface LoginContract {
 
     abstract class ILoginPresenter extends BasePresenter<LoginContract.ILoginView>{
-        abstract void login(String userName, String pw);
+        public abstract void login(String userName, String pw);
     }
 
     interface ILoginView extends IBaseView{

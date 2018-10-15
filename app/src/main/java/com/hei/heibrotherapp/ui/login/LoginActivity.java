@@ -1,12 +1,11 @@
 package com.hei.heibrotherapp.ui.login;
 
-import android.support.annotation.Nullable;
 import android.widget.Button;
 
 import com.hei.heibrotherapp.R;
-import com.hei.heibrotherapp.base.mvp.BaseActivity;
 import com.hei.heibrotherapp.base.mvp.BaseMvpActivity;
-import com.hei.heibrotherapp.base.mvp.BasePresenter;
+import com.hei.heibrotherapp.presenter.login.LoginContract;
+import com.hei.heibrotherapp.presenter.login.LoginPresenter;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -24,8 +23,13 @@ public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements Lo
     Button mBtnLogin;
 
     @Override
+    protected void initView() {
+
+    }
+
+    @Override
     protected void initData() {
-        super.initData();
+
     }
 
 
@@ -36,7 +40,7 @@ public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements Lo
 
     @OnClick(R.id.btn_login)
     public void gotoLogin() {
-        mPresenter.login("111","222");
+        mPresenter.login("111", "222");
     }
 
     @Override

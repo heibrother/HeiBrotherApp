@@ -28,7 +28,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+        initBaseView();
         initView();
+        initBaseData();
         initData();
     }
 
@@ -41,13 +43,17 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    protected void initView() {
+    protected void initBaseView() {
         mUnbinder = ButterKnife.bind(this);
     }
 
-    protected void initData(){
+    protected void initBaseData(){
         mDialog = new Dialog(this);
     }
+
+    protected abstract void initView();
+
+    protected abstract void initData();
 
     protected abstract int getLayoutId();
 

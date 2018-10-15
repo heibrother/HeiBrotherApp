@@ -1,10 +1,7 @@
-package com.hei.heibrotherapp.ui.login;
+package com.hei.heibrotherapp.presenter.login;
 
 import android.os.Handler;
 import android.os.Looper;
-
-import com.hei.heibrotherapp.R;
-import com.hei.heibrotherapp.base.mvp.BasePresenter;
 
 
 /**
@@ -18,7 +15,7 @@ public class LoginPresenter extends LoginContract.ILoginPresenter {
 
 
     @Override
-    void login(String userName, String pw) {
+    public void login(String userName, String pw) {
         mView.showDefaultDialog();
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
