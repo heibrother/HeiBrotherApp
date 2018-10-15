@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HeiBrotherApp</string>
+
+    <string name="loading">加载中</string>
 </resources>

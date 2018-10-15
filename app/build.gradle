@@ -16,13 +16,36 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets{
+        main{
+            jniLibs.srcDir 'libs'
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+            res.srcDirs =
+                    ['src/main/res',
+                     'src/main/res/layout/common',
+                     'src/main/res/layout/activity',
+                     'src/main/res/layout/fragment',
+                     'src/main/res/layout/views',
+                     'src/main/res/layout/dialog',
+                    ]
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
+    androidTestCompile('com.android.support:support-annotations:26.1.0') {
+        force = true
+    }
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
 }
