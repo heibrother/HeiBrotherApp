@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.hei.heibrotherapp.common.utils.ToastUtils;
+import com.hei.heibrotherapp.view.widgets.LoadingDialog;
 
 import java.nio.Buffer;
 
@@ -15,14 +16,14 @@ import butterknife.Unbinder;
 /**
  * @ClassName: BaseActivity
  * @Description: 通用的Activity基类
- * @Author: dongchang.Tang(01381733)
+ * @Author: dongchang.Tang
  * @Date: 2018/10/12 18:25
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
 
     private  Unbinder mUnbinder;
-    private Dialog mDialog;
+    private LoadingDialog mDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,7 +49,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected void initBaseData(){
-        mDialog = new Dialog(this);
+
     }
 
     protected abstract void initView();
@@ -69,6 +70,9 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 显示对话框
      */
     public void showDialog(String msg){
+        if (null == mDialog) {
+            mDialog = new LoadingDialog(this);
+        }
         mDialog.setTitle(msg);
         mDialog.show();
     }

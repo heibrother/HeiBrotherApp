@@ -7,7 +7,7 @@ import android.os.Looper;
 /**
  * @ClassName: LoginPresenter
  * @Description: java类作用描述
- * @Author: dongchang.Tang(01381733)
+ * @Author: dongchang.Tang
  * @Date: 2018/10/15 17:01
  */
 

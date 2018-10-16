@@ -5,7 +5,7 @@ import android.app.Application;
 /**
  * @ClassName: HeiApplication
  * @Description: java类作用描述
- * @Author: dongchang.Tang(01381733)
+ * @Author: dongchang.Tang
  * @Date: 2018/10/12 18:29
  */
 
