@@ -1,11 +1,13 @@
 package com.hei.heibrotherapp.ui.login;
 
+import android.content.Intent;
 import android.widget.Button;
 
 import com.hei.heibrotherapp.R;
 import com.hei.heibrotherapp.base.mvp.BaseMvpActivity;
 import com.hei.heibrotherapp.presenter.login.LoginContract;
 import com.hei.heibrotherapp.presenter.login.LoginPresenter;
+import com.hei.heibrotherapp.ui.MainActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -46,6 +48,8 @@ public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements Lo
     @Override
     public void loginSuccess() {
         showToast("登录成功");
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     @Override
