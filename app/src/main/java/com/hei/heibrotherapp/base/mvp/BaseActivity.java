@@ -1,14 +1,11 @@
 package com.hei.heibrotherapp.base.mvp;
 
-import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.hei.heibrotherapp.common.utils.ToastUtils;
+import com.hei.heibrotherapp.common.utils.MyToastUtils;
 import com.hei.heibrotherapp.view.widgets.LoadingDialog;
-
-import java.nio.Buffer;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -63,7 +60,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param msg
      */
     public void showToast(String msg) {
-        ToastUtils.showToast(this,msg);
+        MyToastUtils.showToast(this,msg);
     }
 
     /**
